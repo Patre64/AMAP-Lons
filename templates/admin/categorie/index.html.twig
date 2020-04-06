@@ -1,0 +1,63 @@
+{% extends "admin/base.html.twig" %}
+
+{% block body %}
+
+</br>
+</br>
+</br>
+</br>
+
+    <h1 style="color:white">Categories :</h1>
+
+    <a class="create" href="{{ path('categorie_new') }}">NOUVEAU</a>
+
+</br>
+</br>
+
+    <table class="table table-striped table-dark">
+
+        <thead class="thead-light ">
+            <tr>
+                <th>Nom</th>
+                <th>NbCheque</th>
+                <th>NbChequeFixe</th>
+                <th>Remarque</th>
+                <th>Actif</th>
+                <th>UrlImg</th>
+                <th>DescriptionProduits</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+
+        {% for categorie in categories %}
+
+            <tr>
+                <td>{{ categorie.nom }}</td>
+                <td>{{ categorie.nbCheque }}</td>
+                <td>{{ categorie.nbChequeFixe ? 'Yes' : 'No' }}</td>
+                <td>{{ categorie.remarque }}</td>
+                <td>{{ categorie.actif ? 'Yes' : 'No' }}</td>
+                <td>{{ categorie.urlImg }}</td>
+                <td>{{ categorie.descriptionProduits }}</td>
+
+                <td>
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">Mofifier/Supprimer</a>
+                </td>
+
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="9">Pas d'enregistrements trouvés !</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    
+{% endblock %}

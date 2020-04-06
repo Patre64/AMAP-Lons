@@ -1,0 +1,74 @@
+{% extends "admin/base.html.twig" %}
+
+{% block body %}
+
+</br>
+</br>
+</br>
+</br>
+
+    <h1 style= color:white>Produits :</h1>
+
+    <a class="create" href="{{ path('produit_new') }}">NOUVEAU</a>
+
+</br>
+</br>
+
+    <table class="table table-striped table-dark table-fixed">
+
+        <thead class="thead-light" >
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Unite</th>
+                <th>QuantiteMin</th>
+                <th>Prix</th>
+                <th>Nbcheque</th>
+                <th>NombreDeDistribution</th>
+                <th>NombreDeLivraisonsRestantes</th>
+                <th>PeriodeDebut</th>
+                <th>PeriodeFin</th>
+                <th>Actif</th>
+                <th>Periodicite</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for produit in produits %}
+
+            <tr>
+
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.nom }}</td>
+                <td>{{ produit.description }}</td>
+                <td>{{ produit.unite }}</td>
+                <td>{{ produit.quantiteMin }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>{{ produit.nbcheque }}</td>
+                <td>{{ produit.nombreDeDistribution }}</td>
+                <td>{{ produit.nombreDeLivraisonsRestantes }}</td>
+                <td>{{ produit.periodeDebut }}</td>
+                <td>{{ produit.periodeFin }}</td>
+                <td>{{ produit.actif ? 'Yes' : 'No' }}</td>
+                <td>{{ produit.periodicite }}</td>
+                
+                <td>
+                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">Modifier/Supprimer</a>
+                </td>
+
+            </tr>
+            
+        {% else %}
+            <tr>
+                <td colspan="14">Pas d'enregistrements trouvés !</td>
+            </tr>
+        {% endfor %}
+        
+        </tbody>
+
+    </table>
+
+{% endblock %}

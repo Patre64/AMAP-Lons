@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>Contrats</title>
+
+{% block body %}
+    <h1>Contrats</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contrat.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ contrat.date ? contrat.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ contrat.etat ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('contrats_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('contrats_edit', {'id': contrat.id}) }}">Mofifier/Supprimer</a>
+
+    {{ include('admin/contrats/_delete_form.html.twig') }}
+{% endblock %}

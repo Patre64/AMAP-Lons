@@ -1,0 +1,54 @@
+{% extends "admin/base.html.twig" %}
+
+{% block body %}
+
+</br>
+</br>
+</br>
+</br>
+
+    <h1 style= color:white>Contrats :</h1>
+
+    <a class="create" href="{{ path('contrats_new') }}">NOUVEAU</a>
+
+</br>
+</br>
+
+    <table class="table table-striped table-dark table-fixed">
+
+        <thead class="thead-light" >
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Etat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for contrat in contrats %}
+
+            <tr>
+
+                <td>{{ contrat.id }}</td>
+                <td>{{ contrat.date ? contrat.date|date('Y-m-d') : '' }}</td>
+                <td>{{ contrat.etat ? 'Yes' : 'No' }}</td>
+
+                <td>
+                    <a href="{{ path('contrats_edit', {'id': contrat.id}) }}">Modifier/Supprimer</a>
+                </td>
+
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="4">Pas d'enregistrements trouvés !</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+{% endblock %}

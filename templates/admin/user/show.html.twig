@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<title>User</title>
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ user.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Groupe</th>
+                <td>{{ user.groupe }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ user.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ user.ville }}</td>
+            </tr>
+            <tr>
+                <th>CP</th>
+                <td>{{ user.CP }}</td>
+            </tr>
+            <tr>
+                <th>TelFixe</th>
+                <td>{{ user.telFixe }}</td>
+            </tr>
+            <tr>
+                <th>TelPort1</th>
+                <td>{{ user.telPort1 }}</td>
+            </tr>
+            <tr>
+                <th>TelPort2</th>
+                <td>{{ user.telPort2 }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ user.actif ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Identifiant</th>
+                <td>{{ user.identifiant }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>CharteAcceptee</th>
+                <td>{{ user.charteAcceptee ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+    {{ include('admin/user/_delete_form.html.twig') }}
+{% endblock %}

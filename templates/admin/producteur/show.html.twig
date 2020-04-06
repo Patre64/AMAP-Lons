@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<title>Producteur</title>
+
+{% block body %}
+    <h1>Producteur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ producteur.id }}</td>
+            </tr>
+            <tr>
+                <th>RaisonSociale</th>
+                <td>{{ producteur.raisonSociale }}</td>
+            </tr>
+            <tr>
+                <th>NomResponsable</th>
+                <td>{{ producteur.nomResponsable }}</td>
+            </tr>
+            <tr>
+                <th>PrenomResponsable</th>
+                <td>{{ producteur.prenomResponsable }}</td>
+            </tr>
+            <tr>
+                <th>AdresseProducteur</th>
+                <td>{{ producteur.adresseProducteur }}</td>
+            </tr>
+            <tr>
+                <th>CpProducteur</th>
+                <td>{{ producteur.cpProducteur }}</td>
+            </tr>
+            <tr>
+                <th>VilleProducteur</th>
+                <td>{{ producteur.villeProducteur }}</td>
+            </tr>
+            <tr>
+                <th>TelFixeProducteur</th>
+                <td>{{ producteur.telFixeProducteur }}</td>
+            </tr>
+            <tr>
+                <th>TelPortProducteur</th>
+                <td>{{ producteur.telPortProducteur }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ producteur.actif ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('producteur_index') }}">back to list</a>
+
+    <a href="{{ path('producteur_edit', {'id': producteur.id}) }}">edit</a>
+
+    {{ include('admin/producteur/_delete_form.html.twig') }}
+{% endblock %}

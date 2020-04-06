@@ -1,0 +1,13 @@
+#date_heure {
+
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+
+}
+
+.header-top-wraper > div > div:nth-child(1){
+
+    padding: 30px;
+
+}

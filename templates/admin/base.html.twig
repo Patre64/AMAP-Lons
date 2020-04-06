@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Base{% endblock %}</title>
+
+    {% block stylesheets %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/admin/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/alerts.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/accordions.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/buttons.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/modals.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/meanmenu.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/tabs.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/data-table/bootstrap-editable.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/data-table/bootstrap-table.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/form/all-type-forms.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/form/themesaller-forms.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/admin/logout.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/date_heure.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/create.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/form.css')}}">
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+    {% block sidebar %}
+
+    <div class="left-sidebar-pro">
+
+        <nav id="sidebar" class="">
+
+            <div class="sidebar-header">
+
+                <a href="{{path('dashboard')}}"><img class="main-logo" src="{{asset('img/Amap.png')}}" alt="" /></a>
+
+            </div>
+
+            </br>
+            </br>
+
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+
+                    <ul class="metismenu" id="menu1">
+
+                        <li class="active">
+
+                            <a class="has-arrow" href="{{path('dashboard')}}" aria-expanded="false">
+
+                                <i class="fa big-icon fa-home icon-wrap"></i>
+
+                                <span class="mini-click-non">Tableau de bord</span>
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="{{path('user_index')}}" aria-expanded="false">
+
+                                <i class="fa fa-users" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Amapiens</span>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a class="has-arrow" href="#" aria-expanded="false">
+
+                                <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Commandes en cours</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a class="has-arrow" href="{{path('contrats_index')}}" aria-expanded="false">
+
+                                <i class="fa fa-hourglass-half" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Contrats à valider</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="#" aria-expanded="false">
+
+                                <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Contrats validés</span>
+
+                            </a>
+
+                        </li>
+
+                        <li id="removable">
+
+                            <a class="has-arrow" href="#" aria-expanded="false">
+
+                                <i class="fa fa-object-group" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Contrats par catégories</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="{{path('super_categorie_index')}}" aria-expanded="false">
+
+                                <i class="fa fa-pie-chart" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Super-catégories</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="{{path('categorie_index')}}" aria-expanded="false">
+
+                                <i class="fa fa-pie-chart" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Catégories</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="{{path('produit_index')}}" aria-expanded="false">
+
+                                <i class="fa fa-lemon-o" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Produits</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="{{path('producteur_index')}}" aria-expanded="false">
+
+                                <i class="fa fa-truck" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Producteurs</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="#" aria-expanded="false">
+
+                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">PDF Producteur</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="{{path('distribution_index')}}" aria-expanded="false">
+
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Calendrier de distributions</span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="has-arrow" href="#" aria-expanded="false">
+
+                                <i class="fa fa-file-text" aria-hidden="true"></i>
+
+                                <span class="mini-click-non">Listes de distributions</span>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </nav>
+                <p style= color:black>
+
+                    Copyright : {{ webmaster }}
+
+                </p>
+            </div>
+        </nav>
+    </div>
+
+    {% endblock %}
+
+    {% block Entete1 %}
+
+    <!-- Start Welcome area -->
+
+    <div class="all-content-wrapper">
+
+        <div class="header-advance-area">
+            <div class="header-top-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="header-top-wraper">
+
+                                <div class="row">
+
+                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+
+                                      <span id="date_heure"></span>
+
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                
+                                                <li class="nav-item">
+
+                                                    <a class="nav-link dropdown-toggle">
+
+                                                        <i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
+                                                            
+                                                        <span class="admin-name">Pascal Priolet</span>
+                                                            
+                                                    </a>
+
+                                                    <a href="#">
+
+                                                        <span class="glyphicon glyphicon-log-out"></span>
+
+                                                    </a>
+                                                
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+    {% block javascripts %}
+
+    <script type="text/javascript" src="{{asset('js/admin/date_heure.js')}}"></script>
+    <script src="{{asset('js/admin/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script>
+        window.onload = function(){
+            date_heure('date_heure');
+        }
+    </script>
+
+   {% endblock %}
+
+</body>
+
+
+</html>
+

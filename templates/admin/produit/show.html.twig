@@ -1,0 +1,66 @@
+{% block body %}
+    <h1>Produit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ produit.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ produit.description }}</td>
+            </tr>
+            <tr>
+                <th>Unite</th>
+                <td>{{ produit.unite }}</td>
+            </tr>
+            <tr>
+                <th>QuantiteMin</th>
+                <td>{{ produit.quantiteMin }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ produit.prix }}</td>
+            </tr>
+            <tr>
+                <th>Nbcheque</th>
+                <td>{{ produit.nbcheque }}</td>
+            </tr>
+            <tr>
+                <th>NombreDeDistribution</th>
+                <td>{{ produit.nombreDeDistribution }}</td>
+            </tr>
+            <tr>
+                <th>NombreDeLivraisonsRestantes</th>
+                <td>{{ produit.nombreDeLivraisonsRestantes }}</td>
+            </tr>
+            <tr>
+                <th>PeriodeDebut</th>
+                <td>{{ produit.periodeDebut }}</td>
+            </tr>
+            <tr>
+                <th>PeriodeFin</th>
+                <td>{{ produit.periodeFin }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ produit.actif ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Periodicite</th>
+                <td>{{ produit.periodicite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('produit_index') }}">back to list</a>
+
+    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+
+    {{ include('admin/produit/_delete_form.html.twig') }}
+{% endblock %}

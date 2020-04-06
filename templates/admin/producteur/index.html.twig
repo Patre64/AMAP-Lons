@@ -1,0 +1,60 @@
+{% extends "admin/base.html.twig" %}
+
+{% block body %}
+
+</br>
+</br>
+</br>
+</br>
+
+    <h1 style= color:white>Producteurs :</h1>
+
+    <a class="create" href="{{ path('producteur_new') }}">NOUVEAU</a>
+
+</br>
+</br>
+
+    <table class="table table-striped table-dark">
+
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>RaisonSociale</th>
+                <th>NomResponsable</th>
+                <th>PrenomResponsable</th>
+                <th>AdresseProducteur</th>
+                <th>CpProducteur</th>
+                <th>VilleProducteur</th>
+                <th>TelFixeProducteur</th>
+                <th>TelPortProducteur</th>
+                <th>Actif</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producteur in producteurs %}
+            <tr>
+                <td>{{ producteur.id }}</td>
+                <td>{{ producteur.raisonSociale }}</td>
+                <td>{{ producteur.nomResponsable }}</td>
+                <td>{{ producteur.prenomResponsable }}</td>
+                <td>{{ producteur.adresseProducteur }}</td>
+                <td>{{ producteur.cpProducteur }}</td>
+                <td>{{ producteur.villeProducteur }}</td>
+                <td>{{ producteur.telFixeProducteur }}</td>
+                <td>{{ producteur.telPortProducteur }}</td>
+                <td>{{ producteur.actif ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('producteur_edit', {'id': producteur.id}) }}">Modifier/Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">Pas d'enregistrements trouvés !</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}

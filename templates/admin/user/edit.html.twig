@@ -1,0 +1,29 @@
+{% extends "admin/base.html.twig" %}
+
+{% block body %}
+
+</br>
+</br>
+</br>
+</br>
+
+    <h1 style= color:white>Modifier ou supprimer :</h1>
+
+</br>  
+    
+    {{ include('admin/user/_form.html.twig', {'button_label': 'Update'}) }}
+
+</br>
+</br>
+    
+    {{ include('admin/user/_delete_form.html.twig') }}
+
+</br>
+</br>
+
+    <a class="retour-list" href="{{ path('user_index') }}">Retour à la liste</a>
+
+</br>
+</br>
+
+{% endblock %}

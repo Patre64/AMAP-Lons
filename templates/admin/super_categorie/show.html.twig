@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>SuperCategorie</title>
+
+{% block body %}
+    <h1>SuperCategorie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ super_categorie.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ super_categorie.nom }}</td>
+            </tr>
+            <tr>
+                <th>UrlImg</th>
+                <td>{{ super_categorie.urlImg }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('super_categorie_index') }}">back to list</a>
+
+    <a href="{{ path('super_categorie_edit', {'id': super_categorie.id}) }}">edit</a>
+
+    {{ include('admin/super_categorie/_delete_form.html.twig') }}
+{% endblock %}
